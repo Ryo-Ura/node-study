@@ -65,4 +65,5 @@ const printName2 = ({name}) =>{
 }
 printName2(person);
 
-// const {}
+const {name, age} = person;
+console.log(name, age);
