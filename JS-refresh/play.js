@@ -46,3 +46,23 @@ console.log(hobbies);
  * hobbies = ['newArray];       this violates
  * hobbies.push('newItem');     this does not violate
  */
+
+const toArray = (...args) => {
+    return args;
+}
+console.log(toArray(1,2,3,4));
+
+/**
+ * object destructuring
+ */
+const printName = (person) =>{
+    console.log(person.name);
+}
+printName(person);
+
+const printName2 = ({name}) =>{
+    console.log(name);
+}
+printName2(person);
+
+// const {}
