@@ -5,7 +5,7 @@ const reqHandler = (req, res) =>{
     const method = req.method;
     if(url === '/'){
         console.log(req.url);
-        console.log("only the url should be logged");
+        console.log("only the url should be logged");   
         res.write('<html>');
         res.write('<head><title> Enter message</title></head>');
         res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>');
