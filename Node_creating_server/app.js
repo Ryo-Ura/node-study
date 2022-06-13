@@ -1,4 +1,5 @@
 const http = require('http');
+const path = require('path');
 const express = require('express');
 const routes = require('./routes');
 const { application } = require('express');
@@ -6,13 +7,15 @@ const bodyParser = require('body-parser');
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const app = express();
+const port = 3333;
 
 // this will be called and parse body prior to...
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 app.use((req, res,next)=>{
-    res.status(404).send('<h1>Page not found</h1>');
+    // res.status(404).send('<h1>Page not found</h1>');
+    res.sendFile(path.join(__dirname, 'views', 'page-not-found.html'));
 })
 
 
@@ -58,7 +61,7 @@ app.post('/product',(req, res, next)=>{
 
 // const server = http.createServer(app);
 /**alternatively */
-app.listen(3333);
+app.listen(port);
 
 
 /** 
