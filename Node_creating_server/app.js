@@ -8,6 +8,7 @@ const port = 3333;
 
 // this will be called and parse body prior to...
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 app.use((req, res,next)=>{
