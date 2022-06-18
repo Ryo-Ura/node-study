@@ -3,7 +3,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
+
 const app = express();
+app.set('view engine', 'pug');
+app.set('views', 'views');
 const port = 3333;
 
 // this will be called and parse body prior to...
